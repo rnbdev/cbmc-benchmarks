@@ -12,10 +12,13 @@ signed int f(signed int a)
   {
     __CPROVER_assume(a == 2 || a == 3);
     return 10 + a;
-    __CPROVER_assume(a == 2 || a == 3);
   }
 
-  return 12 + a;
+  else
+  {
+    __CPROVER_assume(a == 2 || a == 3);
+    return 12 + a;
+  }
 }
 
 // main
